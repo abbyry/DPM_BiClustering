@@ -1,0 +1,11 @@
+Use of code:
+There are three R scripts: simulation_data.R, function.R, and analysis.R.
+
+simulation_data.R:
+This script is used to simulate data to validate the performance of the statistical model. Users can set their own parameters. This simulation is not necessary for users analyzing an application data.
+
+function.R: 
+This script is to define the functions used in running MCMC iterations. Users need to source this script in their analysis code. The parameter “method” in the “Update.Rho” function is defining the prior distribution for ρ. As we mentioned in the main text, we used a two-step approach, and in the first step, we set the prior distribution for ρ as a uniform distribution, and in the second step, we set a normal prior distribution. Users can modify the prior settings to better fit their own data.
+
+analysis.R:
+Users need to run this script to analyze their data. Users need to source “function.R”, specify the data to be analyzed, set the initial values, and run the iterations. Then the output will be 8 .txt files for the MCMC samples for the parameters individually. The approach to summarize the MCMC samples is described in the article.
